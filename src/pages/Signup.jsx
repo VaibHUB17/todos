@@ -25,9 +25,7 @@ const Signup = () => {
     event.preventDefault();
     setSubmitError('');
 
-    const response = await signUpEmailPassword(formData.email, formData.password, {
-      redirectTo: `${window.location.origin}/login`
-    });
+    const response = await signUpEmailPassword(formData.email, formData.password);
 
     if (response?.error) {
       setSubmitError(response.error.message || 'Signup failed.');
